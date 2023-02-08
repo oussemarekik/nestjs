@@ -49,29 +49,3 @@ jobs:
             # Run a new container from a new image
             docker run -d \
             -p 3000:3000 \
-            -e DB_PORT_DEV=${{ secrets.DB_PORT_DEV}} \
-            -e DB_HOST_DEV=${{ secrets.DB_HOST_DEV }} \
-            -e DB_USER_DEV=${{ secrets.DB_USER_DEV }} \
-            -e DB_PASS_DEV=${{ secrets.DB_PASS_DEV }} \
-            -e DB_DATABASE_DEV=${{ secrets.DB_DATABASE_DEV }} \
-            -e DB_CA_CERT_DEV=${{ secrets.DB_CA_CERT_DEV }} \
-            -e EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }} \
-            -e EMAIL_API_SECRET=${{ secrets.EMAIL_API_SECRET }} \
-            -e DEFAULT_SENDER_EMAIL=${{ secrets.DEFAULT_SENDER_EMAIL }} \
-            -e DEFAULT_RECEIVER_EMAIL=${{ secrets.DEFAULT_RECEIVER_EMAIL }} \
-            -e STORAGE_REGION=${{ secrets.STORAGE_REGION }} \
-            -e STORAGE_ACCESS_KEY_ID=${{ secrets.STORAGE_ACCESS_KEY_ID }} \
-            -e STORAGE_SECRET_ACCESS_KEY=${{ secrets.STORAGE_SECRET_ACCESS_KEY }} \
-            -e STORAGE_ENDPOINT=${{ secrets.STORAGE_ENDPOINT }} \
-            -e STORAGE_NAME=${{ secrets.STORAGE_NAME }} \
-            -e ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} \
-            -e REFRESH_TOKEN_EXPIRATION=${{ secrets.REFRESH_TOKEN_EXPIRATION }} \
-            -e ACCESS_TOKEN_EXPIRATION=${{ secrets.ACCESS_TOKEN_EXPIRATION }} \
-            -e REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }} \
-            -e MAPS_PROVIDER=${{ secrets.MAPS_PROVIDER }} \
-            -e MAPS_ACCESS_KEY=${{ secrets.MAPS_ACCESS_KEY }} \
-            -e FRONTEND_BASE_URL_DEV=${{ secrets.FRONTEND_BASE_URL_DEV }} \
-            -e NEW_RELIC_LICENSE_KEY=${{ secrets.NEW_RELIC_LICENSE_KEY }} \
-            --restart always \
-            --name $(echo $IMAGE_NAME) \
-            $(echo $REGISTRY)/$(echo $IMAGE_NAME):$(echo $GITHUB_SHA | head -c7)
